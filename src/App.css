@@ -1,38 +1,65 @@
+:root {
+  --bg-color: #0D1117;
+  --p-color: #fff;
+
+  --color-0: #2E3948;
+  --color-1: #39D353;
+
+  --cols: 52;
+  --rows: 80;
+  --tile-size: 20px;
+  --border-width: 3px;
+}
+
+.color-0 {
+  background-color: var(--color-0);
+}
+
+.color-1 {
+  background-color: var(--color-1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--p-color);
 }
 
-.App-link {
-  color: #61dafb;
+.App-title {
+  color: var(--p-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.formButton {
+  margin: 5px;
+}
+
+.dateInput {
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.grid-square {
+  width: var(--tile-size);
+  height: var(--tile-size);
+  border-width: var(--border-width);
+  border-style: solid;
+  border-radius: 5px;
+  border-color: var(--bg-color);
+}
+
+.grid-board {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--tile-size));
+  grid-gap: 0;
+  justify-content: center;
 }
